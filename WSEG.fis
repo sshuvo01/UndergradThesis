@@ -1,0 +1,33 @@
+[System]
+Name='WSEG'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=1
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='VS'
+Range=[0 1]
+NumMFs=1
+MF1='low':'trimf',[-1 0 1]
+
+[Input2]
+Name='HS'
+Range=[0 1]
+NumMFs=1
+MF1='low':'trimf',[-1 0 1]
+
+[Output1]
+Name='Chance'
+Range=[0 100]
+NumMFs=1
+MF1='high':'trimf',[0 100 200]
+
+[Rules]
+1 1, 1 (1) : 1
